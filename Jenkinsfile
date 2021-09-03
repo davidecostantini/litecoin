@@ -15,7 +15,7 @@ node {
     }
     
     stage('Scanning docker image with grype/anchore') {
-        sh "./grype litecoin --scope all-layers"
+        sh "${env.WORKSPACE}/grype litecoin --scope all-layers"
     }
     
     stage('Deploy service to k8s') {
